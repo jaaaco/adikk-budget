@@ -18,7 +18,21 @@ class CategoryAdd extends Component {
           <label className="sr-only" htmlFor="categoryName">Nazwa kategorii</label>
           <input type="text" className="form-control" id="categoryName" placeholder="twoja nazwa" />
         </div>
-        <button type="submit" className="btn btn-default">Dodaj</button>
+        <button type="submit" className="btn btn-primary">Dodaj</button>
+      </form>
+    )
+  }
+}
+
+class Cost extends Component {
+  render() {
+    return (
+      <form className="form-inline">
+        <div className="form-group">
+          <label className="sr-only" htmlFor="amountOfMoney">Nazwa kategorii</label>
+          <input type="text" className="form-control" id="amountOfMoney" placeholder="kwota pieniędzy" />
+        </div>
+        <button type="submit" className="btn btn-success">Zatwierdź</button>
       </form>
     )
   }
@@ -27,7 +41,7 @@ class CategoryAdd extends Component {
 const myCategories = [
   { name: 'Jedzenie poza domem' },
   { name: 'Alkohol' },
-  { name: 'Paliwo 2' },
+  { name: 'Paliwo' },
 ]
 
 class App extends Component {
@@ -40,13 +54,29 @@ class App extends Component {
 
     return (
       <div className="container">
-        <h1>
-          Moje kategorie
-        </h1>
-        <ul>
-          {categories}
-        </ul>
-        <CategoryAdd/>
+        <div class="row">
+          <div class="col-md-4">
+            <h1>
+              Kategorie:
+            </h1>
+            <ul>
+              {categories}
+            </ul>
+            <CategoryAdd/>
+          </div>
+          <div class="col-md-4">
+            <h1>Kwota:</h1>
+            <Cost/>
+          </div>
+          <div class="col-md-4">
+            <h1>
+              Moje wydatki:
+            </h1>
+            <ul>
+              {categories}
+            </ul>
+          </div>
+        </div>
       </div>
     )
   }
