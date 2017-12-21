@@ -2,9 +2,24 @@ body {
   background-color: whitesmoke;
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: Verdana, Geneva, sans-serif;
 }
 
 .container {
-  padding-top: 300px;
+  display: block;
+  padding-bottom: 17%;
+  padding-top: 17%;
+}
+
+.btn {
+  border-radius: 0%;
+}
+
+.form-control {
+  border-radius: 0%;
+  padding-top: 7px;
+}
+
+h1 {
+  font-weight: 600;
 }

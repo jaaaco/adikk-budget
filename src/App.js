@@ -15,7 +15,6 @@ class CategoryAdd extends Component {
     return (
       <form className="form-inline">
         <div className="form-group">
-          <label className="sr-only" htmlFor="categoryName">Nazwa kategorii</label>
           <input type="text" className="form-control" id="categoryName" placeholder="twoja nazwa" />
         </div>
         <button type="submit" className="btn btn-primary">Dodaj</button>
@@ -29,7 +28,6 @@ class Cost extends Component {
     return (
       <form className="form-inline">
         <div className="form-group">
-          <label className="sr-only" htmlFor="amountOfMoney">Nazwa kategorii</label>
           <input type="text" className="form-control" id="amountOfMoney" placeholder="kwota pieniędzy" />
         </div>
         <button type="submit" className="btn btn-success">Zatwierdź</button>
