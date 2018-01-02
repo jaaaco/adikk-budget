@@ -1,0 +1,21 @@
+
+//
+// function jakasfunkcja(parametr) {
+//   return 20
+// }
+//
+// (parametr) => {
+//   return 20
+// }
+//
+// (parametr) => 20 * 12
+//
+// parametr => 20 * 12
+
+
+
+// if (this.state.buttonVisible) {
+//   <button onClick={this.onCategoryAdd} type="submit" className="btn btn-primary">Dodaj</button>
+// } else {
+//   null
+// }

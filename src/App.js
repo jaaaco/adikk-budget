@@ -1,30 +1,10 @@
-import React, {Component} from 'react';
-import logo from './logo.svg';
-import './App.css';
-
-class Category extends Component {
-  render() {
-    return (
-      <li> {this.props.name} </li>
-    )
-  }
-}
-
-class CategoryAdd extends Component {
-  render() {
-    return (
-      <form className="form-inline">
-        <div className="form-group">
-          <input type="text" className="form-control" id="categoryName" placeholder="twoja nazwa" />
-        </div>
-        <button type="submit" className="btn btn-primary">Dodaj</button>
-      </form>
-    )
-  }
-}
+import React, { Component } from 'react'
+import './App.css'
+import Category from './components/category'
+import CategoryAdd from './components/categoryAdd'
 
 class Cost extends Component {
-  render() {
+  render () {
     return (
       <form className="form-inline">
         <div className="form-group">
@@ -36,42 +16,55 @@ class Cost extends Component {
   }
 }
 
-const myCategories = [
-  { name: 'Jedzenie poza domem' },
-  { name: 'Alkohol' },
-  { name: 'Paliwo' },
-]
-
 class App extends Component {
-  render() {
+  constructor (props) {
+    super(props)
+
+    this.state = {
+      categories: [
+        { name: 'Jedzenie poza domem' },
+        { name: 'Alkohol' },
+        { name: 'Paliwo' }
+      ]
+    }
+  }
+
+  onCategoryAdd = (categoryName) => {
+    const categories = this.state.categories
+    categories.push({ name: categoryName })
+    this.setState({ categories: categories })
+    // this.setState({ categories })
+  }
+
+  render () {
     const categories = []
 
-    myCategories.forEach(function(category) {
+    this.state.categories.forEach(function (category) {
       categories.push(<Category name={category.name}/>)
     })
 
     return (
       <div className="container">
-        <div class="row">
-          <div class="col-md-4">
+        <div className="row">
+          <div className="col-md-4">
             <h1>
-              Kategorie:
+              Kategorie
             </h1>
             <ul>
               {categories}
             </ul>
-            <CategoryAdd/>
+            <CategoryAdd onCategoryAdd={this.onCategoryAdd} />
           </div>
-          <div class="col-md-4">
-            <h1>Kwota:</h1>
+          <div className="col-md-4">
+            <h1>Kwota</h1>
             <Cost/>
           </div>
-          <div class="col-md-4">
+          <div className="col-md-4">
             <h1>
-              Moje wydatki:
+              Moje wydatki
             </h1>
             <ul>
-              {categories}
+              <li>tutaj beda wydatki </li>
             </ul>
           </div>
         </div>
@@ -80,4 +73,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default App
